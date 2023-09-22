@@ -521,6 +521,9 @@ public class GenerateCatalogMojo extends AbstractMojo {
         artifacts.add(Artifact.from("org.apache.camel", "camel-jaxb"));
         artifacts.add(Artifact.from("org.jolokia", "jolokia-jvm"));
         addCapabilityAndDependecies(runtimeSpec, catalogSpec, "jolokia", artifacts, false);
+
+        artifacts.add(Artifact.from("com.google.cloud.tools", "jib-maven-plugin"));
+        addCapabilityAndDependecies(runtimeSpec, catalogSpec, "jib", artifacts, false);
     }
 
     private void addCapabilityAndDependecies(RuntimeSpec.Builder runtimeSpec, CamelCatalogSpec.Builder catalogSpec, String name,
